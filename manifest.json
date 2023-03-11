@@ -1,0 +1,9 @@
+{
+    "id": "bf2042-portal-help-plugin",
+    "name": "Help Plugin",
+    "version": "0.0.1",
+    "homepage": "https://the0zzy.github.io/bf2042-portal-help-plugin/",
+    "description": "Extends the functionality for the help menu (toggle visibility and adds information from the community)",
+    "author": "TheOzzy",
+    "main": "index.js"
+}
