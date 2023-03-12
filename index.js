@@ -22,17 +22,10 @@
   };
 
   plugin.initializeWorkspace = function () {
-    logInfo("Initializing...");
-    try {
-      _Blockly.ContextMenuRegistry.registry.register(toggleHelpItem);
-      initialized = true;
-      logInfo("Initialized!");
-    }catch(exception){
-        logError("Failed to initialize!", exception);
-    }
+    //do nothing
   };
 
-  function getLogPrefix(messageType){
+  function getLogPrefix(messageType) {
     return "[" + pluginId + "] [" + messageType + "] - ";
   }
 
@@ -58,5 +51,14 @@
 
   function logError(message, data) {
     console.error(getLogPrefix("ERROR") + message, data);
+  }
+
+  logInfo("Initializing...");
+  try {
+    _Blockly.ContextMenuRegistry.registry.register(toggleHelpItem);
+    initialized = true;
+    logInfo("Initialized!");
+  } catch (exception) {
+    logError("Failed to initialize!", exception);
   }
 })();
