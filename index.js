@@ -29,24 +29,12 @@
     return "[" + pluginId + "] [" + messageType + "] - ";
   }
 
-  function logInfo(message) {
-    console.info(getLogPrefix("INFO") + message);
-  }
-
   function logInfo(message, data) {
     console.info(getLogPrefix("INFO") + message, data);
   }
 
-  function logWarning(message) {
-    console.error(getLogPrefix("WARNING") + message);
-  }
-
   function logWarning(message, data) {
     console.warn(getLogPrefix("WARNING") + message, data);
-  }
-
-  function logError(message) {
-    console.error(getLogPrefix("ERROR") + message);
   }
 
   function logError(message, data) {
