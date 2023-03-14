@@ -1,7 +1,6 @@
 (function () {
   const pluginId = "bf2042-portal-help-plugin";
   const plugin = BF2042Portal.Plugins.getPlugin(pluginId);
-  let initialized = false;
 
   const toggleHelpItem = {
     displayText: "Toggle Help",
@@ -22,7 +21,13 @@
   };
 
   plugin.initializeWorkspace = function () {
-    //do nothing
+    logInfo("Initializing...");
+    try {
+      _Blockly.ContextMenuRegistry.registry.register(toggleHelpItem);
+      logInfo("Initialized!");
+    } catch (exception) {
+      logError("Failed to initialize!", exception);
+    }
   };
 
   function getLogPrefix(messageType) {
@@ -39,14 +44,5 @@
 
   function logError(message, data) {
     console.error(getLogPrefix("ERROR") + message, data);
-  }
-
-  logInfo("Initializing...");
-  try {
-    _Blockly.ContextMenuRegistry.registry.register(toggleHelpItem);
-    initialized = true;
-    logInfo("Initialized!");
-  } catch (exception) {
-    logError("Failed to initialize!", exception);
   }
 })();
