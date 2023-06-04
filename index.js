@@ -17,7 +17,7 @@
     },
     scopeType: _Blockly.ContextMenuRegistry.ScopeType.WORKSPACE,
     id: "toggleHelpItem",
-    weight: 190,
+    weight: 99,
   };
 
   plugin.initializeWorkspace = function () {
